@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 
-const fs = require('fs')
+const fs = require('@cyclic.sh/s3fs')(process.env.CYCLIC_BUCKET_NAME)
  
  
 
