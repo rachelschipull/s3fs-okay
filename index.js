@@ -3,9 +3,6 @@ const app = express();
 
 const fs = require('@cyclic.sh/s3fs')(process.env.CYCLIC_BUCKET_NAME)
 
-const AWS = require("aws-sdk");
-const s3 = new AWS.S3()
-
 app.get('/', async (req, res) => {
     fs.writeFileSync('my_file.txt', new Date().toISOString())
     return res.send('Hello World!');
